@@ -291,7 +291,7 @@ function loadStoreItems(category, elementId) {
             </div>
             <div class="item-details">
                 <div class="item-name">${item.name}</div>
-                <div class="item-price">${item.isRealMoney ? '₱' + item.price.toFixed(2) : item.price + ' PokéCoins'}</div>
+                <div class="item-price">${item.isRealMoney ? '$' + item.price.toFixed(2) : item.price + ' PokéCoins'}</div>
                 <div class="item-description">${item.description}</div>
                 <button class="add-to-cart" data-id="${item.id}" data-category="${category}">Add to Cart</button>
             </div>
