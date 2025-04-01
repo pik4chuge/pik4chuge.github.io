@@ -1,0 +1,120 @@
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 150px);
+    padding: 40px 20px;
+    background-color: #fff9c4; 
+}
+
+.auth-card {
+    background-color: #fff8dc;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    border: 3px solid #b57f2b; 
+}
+
+.auth-card h2 {
+    color: #d32f2f;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.player-id-display {
+    background-color: #ffeb99; 
+    padding: 10px; 
+    border-radius: 8px; 
+    margin-bottom: 15px; 
+    font-family: monospace;
+    font-size: 1rem; 
+    color: #d32f2f;
+    font-weight: bold;
+    border: 2px solid #b57f2b;
+    max-width: 250px; 
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #b57f2b; 
+}
+
+.form-group input {
+    width: 90%;
+    padding: 12px 15px;
+    border: 2px solid #b57f2b;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    background-color: #fff3cd;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #d32f2f; 
+}
+
+.radio-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: normal;
+    cursor: pointer;
+    color: #b57f2b;
+}
+
+.radio-group input[type="radio"] {
+    width: auto;
+    margin: 0;
+}
+
+.auth-link {
+    margin-top: 20px;
+    color: #b57f2b;
+}
+
+.auth-link a {
+    color: #d32f2f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-link a:hover {
+    text-decoration: underline;
+}
+
+.center-logo {
+    max-width: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 576px) {
+    .auth-card {
+        padding: 30px 20px;
+    }
+    
+    .radio-group {
+        flex-direction: column;
+        gap: 8px;
+    }
+}

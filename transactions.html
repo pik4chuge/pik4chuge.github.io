@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PikachuGe - Transactions</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/transactions.css">
+    <link rel="stylesheet" href="css/transactions-enhanced.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="logo">
+            <a href="index.html" class="navbar-brand">
+                <img src="images/pikachugelogo.png" alt="Pikachu Logo">
+                <span class="logo-text">Pikachuge</span>
+            </a>
+        </div>
+        <div class="header-links">
+            <a href="index.html" class="header-link"><i class="fas fa-home"></i> Home</a>
+            <a href="profile.html" class="header-link"><i class="fas fa-user"></i> Profile</a>
+            <a href="transactions.html" class="header-link active"><i class="fas fa-history"></i> Transactions</a>
+            <a href="#" class="header-link" id="logoutBtn"><i class="fa fa-sign-out"></i> Logout</a>
+        </div>
+    </header>
+
+    <!-- Transaction History -->
+    <div class="transactions-container">
+        <h1>TRANSACTIONS</h1>
+        
+        <div class="transactions-filter">
+            <div class="filter-group">
+                <label for="filterMonth">Month:</label>
+                <select id="filterMonth">
+                    <option value="all">All</option>
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="filterYear">Year:</label>
+                <select id="filterYear">
+                    <option value="2016">2016</option>
+                    <option value="2017">2017</option>
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024" selected>2024</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="filterType">Type:</label>
+                <select id="filterType">
+                    <option value="all">All Types</option>
+                    <option value="purchase">Purchase</option>
+                    <option value="trade">Trade</option>
+                    <option value="event">Event</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="filterStatus">Status:</label>
+                <select id="filterStatus">
+                    <option value="all">All Status</option>
+                    <option value="completed">Completed</option>
+                    <option value="pending">Pending</option>
+                    <option value="cancelled">Cancelled</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="advanced-filters">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchTransactions" placeholder="Search transactions, items, or IDs...">
+            </div>
+            <div class="filter-group">
+                <label for="priceMin">Price:</label>
+                <input type="number" id="priceMin" placeholder="Min">
+                <span>-</span>
+                <input type="number" id="priceMax" placeholder="Max">
+            </div>
+            <button id="applyFilters">
+                <i class="fas fa-filter"></i> Apply Filters
+            </button>
+        </div>
+
+        <div class="transaction-summary">
+            <div class="summary-item">
+                <div class="summary-label">Total Spent</div>
+                <div class="summary-value summary-total-spent">25242</div>
+            </div>
+            <div class="summary-item">
+                <div class="summary-label">This Month</div>
+                <div class="summary-value summary-this-month">147</div>
+            </div>
+            <div class="summary-item">
+                <div class="summary-label">Total Items</div>
+                <div class="summary-value summary-total-items">5023</div>
+            </div>
+            <div class="summary-item">
+                <div class="summary-label">Favorite Item</div>
+                <div class="summary-value summary-favorite-item">Max Revive</div>
+            </div>
+        </div>        
+        
+        <div class="transaction-item">
+            <div class="transaction-info">
+                <div class="transaction-date">March 15, 2024 • ID: PKC-2407912</div>
+                <div class="transaction-items">Purchase: 3 Egg Incubators, 6 Max Revives</div>
+                <div class="transaction-item-detail">
+                    <img src="/images/egg-incubator.webp" alt="Egg Incubator" class="item-image">
+                    <span>Egg Incubator x3</span>
+                </div>
+                <div class="transaction-item-detail">
+                    <img src="/images/max-revive.webp" alt="Max Revive" class="item-image">
+                    <span>Max Revive x6</span>
+                </div>
+                <button class="toggle-details" onclick="toggleDetails(this)">Show Details</button>
+                <div class="transaction-details">
+                    <div class="detail-row">
+                        <span class="detail-label">Payment Method:</span>
+                        <span>PokéCard ending in 4532</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Delivery Address:</span>
+                        <span>123 Pallet Town, Kanto Region</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Subtotal:</span>
+                        <span>₽850</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Shipping:</span>
+                        <span>₽50</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Tax:</span>
+                        <span>₽90</span>
+                    </div>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <span class="transaction-status status-completed">Completed</span>
+                <span class="transaction-amount">147 Pokécoins</span>
+            </div>
+        </div>
+        
+        <div class="transaction-item">
+            <div class="transaction-info">
+                <div class="transaction-date">March 10, 2024 • ID: PKC-2407544</div>
+                <div class="transaction-items">Trade: Pikachu for Bulbasaur</div>
+                <div class="transaction-item-detail">
+                    <img src="/images/pokemon/pikachu.png" alt="Pikachu" class="item-image">
+                    <span>Pikachu (Level 24)</span>
+                </div>
+                <div class="transaction-item-detail">
+                    <img src="/images/pokemon/bulbasaur.png" alt="Bulbasaur" class="item-image">
+                    <span>Bulbasaur (Level 22)</span>
+                </div>
+                <button class="toggle-details" onclick="toggleDetails(this)">Show Details</button>
+                <div class="transaction-details">
+                    <div class="detail-row">
+                        <span class="detail-label">Trade Partner:</span>
+                        <span>Ash Ketchum</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Trade Location:</span>
+                        <span>Cerulean City Pokémon Center</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Trade Value:</span>
+                        <span>₽800 (estimated)</span>
+                    </div>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <span class="transaction-status status-completed">Completed</span>
+                <span class="transaction-amount">₽0</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/pikachugelogo.png" alt="Pikachu Logo">
+                <span>PIKACHUGE</span>
+            </div>
+            <div class="footer-disclaimer">
+                <p>Disclaimer: This website is for educational purposes only and no copyright infringement is intended. All images are property of Niantic.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/transactions.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

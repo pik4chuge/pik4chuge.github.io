@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pikachuge Webstore</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="logo">
+            <a href="#index" class="navbar-brand">
+                <img src="images/pikachugelogo.png" alt="Pikachu Logo">
+                <span class="logo-text">Pikachuge</span>
+            </a>
+        </div>
+        <div class="header-links">
+            <a href="index.html" class="header-link"><i class="fas fa-home" aria-hidden="true"></i> Home</a>
+            <a href="profile.html" class="header-link"><i class="fas fa-user" aria-hidden="true"></i> Profile</a>
+            <a href="transactions.html" class="header-link"><i class="fas fa-history" aria-hidden="true"></i> Transactions</a>
+            <a href="login.html" class="header-link active"><i class="fas fa-sign-in-alt" aria-hidden="true"></i> Login</a>
+        </div>
+    </header>
+
+    <!-- Hero Carousel -->
+    <div class="hero-carousel">
+        <div class="carousel-slide active">
+            <img src="images/hero1.webp" alt="Pikachu Promotion">
+            <div class="carousel-caption">
+                <h2><i class="fas fa-bolt"></i> ELECTRIFYING DEALS!</h2>
+                <p>Get limited and web store exclusive boxes today!</p>
+            </div>
+        </div>
+        <div class="carousel-slide">
+            <img src="images/hero2.webp" alt="Pokémon GO Event">
+            <div class="carousel-caption">
+                <h2><i class="fas fa-zap"></i> SHOCKING OFFERS!</h2>
+                <p>Lebron Box now available!</p>
+            </div>
+        </div>
+        <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+        <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <!-- Store Tabs -->
+    <div class="store-tabs">
+        <button class="store-tab active" data-target="featured"><i class="fas fa-star"></i> Featured</button>
+        <button class="store-tab" data-target="item-boxes"><i class="fas fa-box-open"></i> Item Boxes</button>
+        <button class="store-tab" data-target="poke-coins"><i class="fas fa-coins"></i> PokéCoins</button>
+    </div>
+
+    <!-- Store Sections -->
+    <div class="store-container">
+        <!-- Featured Items -->
+        <section id="featured" class="store-section active">
+            <h2 class="section-title"><i class="fas fa-bolt"></i> Featured Items</h2>
+            <div class="items-grid" id="featuredItems">
+                <div class="item-card">
+                    <div class="item-image">
+                        <img src="featured1.png" alt="Featured Item 1">
+                    </div>
+                    <div class="item-details">
+                        <div class="item-name">Featured Item 1</div>
+                        <div class="item-price">100 PokéCoins</div>
+                    </div>
+                </div>
+                <div class="item-card">
+                    <div class="item-image">
+                        <img src="featured2.png" alt="Featured Item 2">
+                    </div>
+                    <div class="item-details">
+                        <div class="item-name">Featured Item 2</div>
+                        <div class="item-price">200 PokéCoins</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Item Boxes -->
+        <section id="item-boxes" class="store-section">
+            <h2 class="section-title"><i class="fas fa-box-open"></i> Item Boxes</h2>
+            <div class="items-grid" id="itemBoxes">
+                <button class="add-to-cart-btn" data-id="1" data-category="example">Add to Cart</button>
+            </div>
+        </section>
+
+        <!-- PokéCoins -->
+        <section id="poke-coins" class="store-section">
+            <h2 class="section-title"><i class="fas fa-coins"></i> PokéCoins</h2>
+            <div class="items-grid" id="pokeCoins">
+            </div>
+        </section>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <div class="cart-title"><i class="fas fa-shopping-cart"></i> YOUR PIKACHU CART</div>
+            <button class="close-cart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart-message">Your cart is empty. Add some electrifying items!</div>
+        </div>
+        <div class="cart-summary">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">0 PokéCoins</span>
+            </div> 
+            <button class="checkout-btn" id="checkoutBtn">CHECKOUT NOW! <i class="fas fa-bolt"></i></button>
+        </div>
+    </div>
+    
+    <!-- Cart Toggle -->
+    <button class="cart-toggle" id="cartToggle">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count" id="cartCount">0</span>
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/pikachugelogo.png" alt="Pikachu Logo">
+                <span>PIKACHUGE</span>
+            </div>
+            <div class="footer-disclaimer">
+                <p>Disclaimer: This website is for educational purposes only and no copyright infringement is intended. All images are property of Niantic.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

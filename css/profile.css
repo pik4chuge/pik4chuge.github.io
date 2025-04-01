@@ -1,0 +1,588 @@
+/* Enhanced Profile CSS for Pikachuge */
+
+/* Profile Container */
+.profile-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Profile Banner */
+.profile-banner {
+    position: relative;
+    height: 200px;
+    background-image: url('/images/pokemon-landscape.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6));
+}
+
+/* Profile Header */
+.profile-header {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    z-index: 2;
+    color: white;
+}
+
+.profile-avatar {
+    position: relative;
+    margin-right: 20px;
+}
+
+.profile-avatar img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    background-color: #fff;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.profile-avatar img:hover {
+    transform: scale(1.05);
+}
+
+.btn-edit {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #ffcb05;
+    border: none;
+    color: #3c5aa6;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.btn-edit:hover {
+    background-color: #3c5aa6;
+    color: #ffcb05;
+}
+
+.profile-title {
+    flex-grow: 1;
+}
+
+.profile-title h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.player-id {
+    margin: 5px 0 10px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Trainer Level */
+.trainer-level {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.level-badge {
+    background-color: #ffcb05;
+    color: #3c5aa6;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.level-progress {
+    flex-grow: 1;
+    height: 10px;
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 5px;
+    overflow: hidden;
+    max-width: 200px;
+}
+
+.level-bar {
+    height: 100%;
+    background-color: #ffcb05;
+    border-radius: 5px;
+}
+
+/* Edit Profile Button */
+.edit-profile-btn {
+    background-color: #3c5aa6;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.edit-profile-btn:hover {
+    background-color: #2a4076;
+}
+
+/* User Bio */
+.user-bio {
+    position: relative;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+
+.user-bio h3 {
+    color: #3c5aa6;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.user-bio p {
+    margin: 0;
+    line-height: 1.6;
+    color: #555;
+}
+
+.btn-edit-small {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #f0f0f0;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #666;
+    transition: all 0.3s ease;
+}
+
+.btn-edit-small:hover {
+    background-color: #3c5aa6;
+    color: white;
+}
+
+/* Card Styling */
+.card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+    color: #3c5aa6;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.card h2 i {
+    margin-right: 10px;
+    color: #ffcb05;
+}
+
+/* Profile Details */
+.detail-item {
+    display: flex;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    width: 120px;
+    color: #666;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.detail-label i {
+    width: 20px;
+    margin-right: 8px;
+    color: #3c5aa6;
+}
+
+.detail-value {
+    flex-grow: 1;
+    color: #333;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.stat-card {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.stat-icon {
+    font-size: 24px;
+    color: #ffcb05;
+    margin-bottom: 10px;
+}
+
+.stat-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: #3c5aa6;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Achievements */
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.achievement-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.achievement-item:hover {
+    background-color: #f0f4f8;
+}
+
+.achievement-icon {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-right: 15px;
+}
+
+.achievement-icon.unlocked {
+    background-color: #ffcb05;
+    color: #3c5aa6;
+}
+
+.achievement-icon.locked {
+    background-color: #e0e0e0;
+    color: #999;
+}
+
+.achievement-detail h4 {
+    margin: 0 0 5px 0;
+    color: #333;
+}
+
+.achievement-detail p {
+    margin: 0;
+    font-size: 13px;
+    color: #666;
+}
+
+/* Favorite Pokemon */
+.pokemon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+}
+
+.pokemon-card {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pokemon-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.pokemon-card img {
+    width: 140px;
+    height: 140px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.pokemon-card h4 {
+    margin: 0 0 5px 0;
+    color: #333;
+    font-size: 14px;
+}
+
+.pokemon-cp {
+    font-size: 12px;
+    color: #666;
+}
+
+.add-pokemon {
+    border: 2px dashed #ccc;
+    background-color: transparent;
+}
+
+.add-icon {
+    width: 70px;
+    height: 70px;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+/* Recent Activity */
+.activity-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.activity-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.activity-item:last-child {
+    border-bottom: none;
+}
+
+.activity-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #f0f4f8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: #3c5aa6;
+    margin-right: 15px;
+}
+
+.activity-content {
+    flex-grow: 1;
+}
+
+.activity-title {
+    display: block;
+    color: #333;
+    margin-bottom: 3px;
+}
+
+.activity-time {
+    font-size: 12px;
+    color: #999;
+}
+
+/* View All Link */
+.view-all {
+    display: block;
+    text-align: center;
+    color: #3c5aa6;
+    text-decoration: none;
+    padding: 10px 0 0;
+    margin-top: 10px;
+    border-top: 1px solid #f0f0f0;
+    transition: color 0.3s ease;
+}
+
+.view-all:hover {
+    color: #ffcb05;
+}
+
+.view-all i {
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.modal-content h2 {
+    color: #3c5aa6;
+    margin-top: 0;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-secondary {
+    background-color: #e0e0e0;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #d0d0d0;
+}
+
+.btn-primary {
+    background-color: #3c5aa6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #2a4076;
+}
+
+/* Active Navigation Link */
+.header-link.active {
+    color: black;
+    border-bottom: 2px solid #ffcb05;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .profile-avatar {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    .trainer-level {
+        justify-content: center;
+    }
+    
+    .level-progress {
+        max-width: 150px;
+    }
+    
+    .edit-profile-btn {
+        margin-top: 15px;
+    }
+    
+    .stats-grid, 
+    .achievements-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .detail-item {
+        flex-direction: column;
+    }
+    
+    .detail-label {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-grid, 
+    .achievements-grid,
+    .pokemon-grid {
+        grid-template-columns: 1fr;
+    }
+}

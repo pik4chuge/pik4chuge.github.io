@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="logo">
+            <a href="index.html" class="navbar-brand">
+                <img src="images/pikachugelogo.png" alt="Pikachu Logo">
+                <span class="logo-text">Pikachuge</span>
+            </a>
+        </div>
+        <nav class="header-links">
+            <a href="index.html" class="header-link" aria-label="Home"><i class="fas fa-home" aria-hidden="true"></i> Home</a>
+            <a href="profile.html" class="header-link active" aria-label="Profile"><i class="fas fa-user" aria-hidden="true"></i> Profile</a>
+            <a href="transactions.html" class="header-link" aria-label="Transactions"><i class="fas fa-history" aria-hidden="true"></i> Transactions</a>
+            <a href="#" class="header-link" id="logoutBtn" aria-label="Logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+        </nav>
+    </header>
+
+    <!-- Profile Content -->
+    <main>
+        <div class="profile-container">
+            <!-- Profile Banner & Header -->
+            <div class="profile-banner">
+                <div class="banner-overlay"></div>
+                <div class="profile-header">
+                    <div class="profile-avatar">
+                        <img src="images/default-user.png" alt="User Avatar" id="userAvatar">
+                        <button class="btn-edit" id="editAvatarBtn" aria-label="Edit profile picture"><i class="fas fa-camera"></i></button>
+                    </div>
+                    <div class="profile-title">
+                        <h1 id="username">PIKACHUGE MEMBER</h1>
+                        <p class="player-id" id="profilePlayerId">ID: 1234 5678 9101</p>
+                        <div class="trainer-level">
+                            <span class="level-badge">LVL 10</span>
+                            <div class="level-progress">
+                                <div class="level-bar" style="width: 65%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn-primary edit-profile-btn" id="editProfileBtn">
+                        <i class="fas fa-edit"></i> Edit Profile
+                    </button>
+                </div>
+            </div>
+
+            <!-- User Bio -->
+            <div class="user-bio">
+                <h3><i class="fas fa-quote-left"></i> About Me</h3>
+                <p id="userBio">Pokemon trainer on a journey to catch 'em all! I love exploring new regions and meeting fellow trainers.</p>
+                <button class="btn-edit-small" id="editBioBtn" aria-label="Edit bio"><i class="fas fa-pencil-alt"></i></button>
+            </div>
+
+            <!-- Profile Details -->
+            <div class="profile-details card">
+                <h2><i class="fas fa-id-card"></i> MEMBER DETAILS</h2>
+                <div class="detail-item">
+                    <span class="detail-label"><i class="fas fa-envelope"></i> Email:</span>
+                    <span class="detail-value" id="profileEmail">pikaweeds@pikachuge.com</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label"><i class="fas fa-birthday-cake"></i> Birthdate:</span>
+                    <span class="detail-value" id="profileBirthdate">January 1, 2000</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label"><i class="fas fa-venus-mars"></i> Gender:</span>
+                    <span class="detail-value" id="profileGender">Male</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label"><i class="fas fa-calendar-check"></i> Join Date:</span>
+                    <span class="detail-value" id="joinDate">January 1, 2021</span>
+                </div>
+            </div>
+
+            <!-- Trainer Stats -->
+            <div class="profile-stats card">
+                <h2><i class="fas fa-chart-line"></i> TRAINER STATS</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-dragon"></i></div>
+                        <div class="stat-value" id="pokemonCaught">150</div>
+                        <div class="stat-label">Pokémon Caught</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-shield-alt"></i></div>
+                        <div class="stat-value" id="gymsDefended">35</div>
+                        <div class="stat-label">Gyms Defended</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-shopping-bag"></i></div>
+                        <div class="stat-value" id="itemsPurchased">50</div>
+                        <div class="stat-label">Items Purchased</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-coins"></i></div>
+                        <div class="stat-value" id="totalSpent">5000</div>
+                        <div class="stat-label">PokéCoins Spent</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Achievements Section -->
+            <div class="achievements card">
+                <h2><i class="fas fa-medal"></i> ACHIEVEMENTS</h2>
+                <div class="achievements-grid">
+                    <div class="achievement-item">
+                        <div class="achievement-icon unlocked">
+                            <i class="fas fa-egg"></i>
+                        </div>
+                        <div class="achievement-detail">
+                            <h4>First Steps</h4>
+                            <p>Hatch your first Pokémon egg</p>
+                        </div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-icon unlocked">
+                            <i class="fas fa-walking"></i>
+                        </div>
+                        <div class="achievement-detail">
+                            <h4>Explorer</h4>
+                            <p>Walk 10km with your buddy</p>
+                        </div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-icon locked">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="achievement-detail">
+                            <h4>Collector</h4>
+                            <p>Catch 100 unique Pokémon species</p>
+                        </div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-icon locked">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="achievement-detail">
+                            <h4>Champion</h4>
+                            <p>Win 50 gym battles</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="view-all">View All Achievements <i class="fas fa-chevron-right"></i></a>
+            </div>
+
+            <!-- Favorite Pokemon -->
+            <div class="favorite-pokemon card">
+                <h2><i class="fas fa-heart"></i> FAVORITE POKÉMON</h2>
+                <div class="pokemon-grid">
+                    <div class="pokemon-card">
+                        <img src="images/pokemon/pikachu.png" alt="Pikachu">
+                        <h4>Pikachu</h4>
+                        <span class="pokemon-cp">CP: 1245</span>
+                    </div>
+                    <div class="pokemon-card">
+                        <img src="images/pokemon/charmander.png" alt="Charmander">
+                        <h4>Charmander</h4>
+                        <span class="pokemon-cp">CP: 986</span>
+                    </div>
+                    <div class="pokemon-card">
+                        <img src="images/pokemon/bulbasaur.png" alt="Bulbasaur">
+                        <h4>Bulbasaur</h4>
+                        <span class="pokemon-cp">CP: 1023</span>
+                    </div>
+                    <div class="pokemon-card add-pokemon">
+                        <div class="add-icon">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <h4>Add Favorite</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Logout Confirmation Modal -->
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <h2>Confirm Logout</h2>
+            <p>Are you sure you want to log out of your Pikachuge account?</p>
+            <div class="modal-buttons">
+                <button id="cancelLogout" class="btn-secondary">Cancel</button>
+                <button id="confirmLogout" class="btn-primary">Logout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/pikachugelogo.png" alt="Pikachu Logo">
+                <span>PIKACHUGE</span>
+            </div>
+            <div class="footer-disclaimer">
+                <p>Disclaimer: This website is for educational purposes only and no copyright infringement is intended. All images are property of Niantic.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

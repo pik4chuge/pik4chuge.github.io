@@ -1,0 +1,417 @@
+/* Modernized Transaction Styles */
+
+/* CSS Variables for easy theme management */
+:root {
+    --pikachu-primary: #FFCC00;
+    --pikachu-secondary: #FBB917;
+    --pikachu-dark: #333333;
+    --pikachu-gray: #DDDDDD;
+    --pikachu-light: #FFFAE6;
+    --pikachu-accent: #E3350D; /* Pokéball red for accents */
+    --shadow-soft: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --shadow-medium: 0 6px 12px rgba(0, 0, 0, 0.08);
+    --transition-standard: all 0.3s ease-in-out;
+  }
+  
+  /* General Form Elements */
+  input[type="text"], input[type="number"], select {
+      padding: 12px 16px;
+      border-radius: 8px;
+      border: 1px solid var(--pikachu-gray);
+      font-size: 1rem;
+      background-color: #fff;
+      transition: var(--transition-standard);
+      width: 100%;
+      box-sizing: border-box;
+      font-family: inherit;
+  }
+  
+  input[type="text"]:focus, input[type="number"]:focus, select:focus {
+      border-color: var(--pikachu-primary);
+      outline: none;
+      box-shadow: 0 0 8px rgba(255, 204, 0, 0.5); /* Pikachu Yellow */
+      transform: translateY(-1px);
+  }
+  
+  /* Modern Search Box with improved positioning */
+  .search-box {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+  }
+  
+  .search-box input {
+      padding: 12px 16px 12px 42px; /* Increased padding for icon */
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid var(--pikachu-gray);
+      background-color: #fff;
+      width: 100%;
+  }
+  
+  .search-box i {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.1rem;
+      color: #999;
+      pointer-events: none; /* Ensures the icon doesn't interfere with input */
+  }
+  
+  /* Modern Dropdown with improved styling */
+  select {
+      appearance: none; /* Removes default browser styling */
+      background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M6%2C9L0%2C3h12L6%2C9z%22%2F%3E%3C%2Fsvg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      background-size: 10px;
+      padding-right: 40px;
+  }
+  
+  /* Apply Filters Button */
+  #applyFilters {
+      background-color: var(--pikachu-primary);
+      color: var(--pikachu-dark);
+      font-weight: 600;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: var(--transition-standard);
+      box-shadow: var(--shadow-soft);
+  }
+  
+  #applyFilters:hover {
+      background-color: var(--pikachu-secondary);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-medium);
+  }
+  
+  #applyFilters:active {
+      transform: translateY(0);
+  }
+  
+  /* Min/Max Inputs */
+  .filter-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+  }
+  
+  .filter-group label {
+      font-weight: 500;
+      margin-right: 4px;
+      color: var(--pikachu-dark);
+  }
+  
+  .filter-group input[type="number"] {
+      padding: 12px 16px;
+      border-radius: 8px;
+      border: 1px solid var(--pikachu-gray);
+      font-size: 1rem;
+      transition: var(--transition-standard);
+      width: 90px;
+  }
+  
+  /* Modern Transaction Summary with enhanced styling */
+  .transaction-summary {
+      background-color: var(--pikachu-light);
+      padding: 24px;
+      margin: 24px 0;
+      border-radius: 16px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255, 204, 0, 0.2);
+  }
+  
+  .summary-item {
+      text-align: center;
+      width: calc(25% - 15px);
+      padding: 16px;
+      background-color: white;
+      border-radius: 12px;
+      transition: var(--transition-standard);
+      border: 1px solid var(--pikachu-gray);
+  }
+  
+  .summary-item:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-medium);
+      border-color: var(--pikachu-primary);
+  }
+  
+  .summary-label {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 8px;
+  }
+  
+  .summary-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--pikachu-dark);
+  }
+  
+  /* Enhanced Transaction Items */
+  .transaction-item {
+      background-color: white;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--pikachu-gray);
+      transition: var(--transition-standard);
+      display: flex;
+      justify-content: space-between;
+  }
+  
+  .transaction-item:hover {
+      box-shadow: var(--shadow-medium);
+      border-color: var(--pikachu-primary);
+  }
+  
+  .transaction-date {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 8px;
+  }
+  
+  .transaction-items {
+      font-weight: 500;
+      margin-bottom: 12px;
+      color: var(--pikachu-dark);
+  }
+  
+  .transaction-status {
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-align: center;
+      min-width: 100px;
+  }
+  
+  .status-completed {
+      background-color: rgba(72, 187, 120, 0.15);
+      color: #2F855A;
+  }
+  
+  .status-pending {
+      background-color: rgba(237, 137, 54, 0.15);
+      color: #C05621;
+  }
+  
+  .status-cancelled {
+      background-color: rgba(229, 62, 62, 0.15);
+      color: #C53030;
+  }
+  
+  .transaction-amount {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--pikachu-dark);
+      text-align: right;
+      min-width: 80px;
+  }
+  
+  /* Transaction Item Details */
+  .transaction-item-detail {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 8px 0;
+      padding: 8px;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+  }
+  
+  .item-image {
+      border-radius: 8px;
+      border: 1px solid var(--pikachu-gray);
+  }
+  
+  /* Toggle Details Button */
+  .toggle-details {
+      background: transparent;
+      border: none;
+      color: var(--pikachu-secondary);
+      font-weight: 600;
+      cursor: pointer;
+      padding: 8px 0;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      transition: var(--transition-standard);
+  }
+  
+  .toggle-details:hover {
+      color: var(--pikachu-primary);
+  }
+  
+  .toggle-details::after {
+      content: '\f078'; /* fa-chevron-down */
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      margin-left: 6px;
+      font-size: 0.8rem;
+  }
+  
+  .toggle-details.active::after {
+      content: '\f077'; /* fa-chevron-up */
+  }
+  
+  /* Transaction Details */
+  .transaction-details {
+      display: none;
+      padding: 12px;
+      margin-top: 12px;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+  }
+  
+  .detail-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--pikachu-gray);
+  }
+  
+  .detail-row:last-child {
+      border-bottom: none;
+  }
+  
+  .detail-label {
+      font-weight: 500;
+      color: #666;
+  }
+  
+  /* Enhanced Filters Section */
+  .transactions-filter {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 20px;
+      padding: 16px;
+      background-color: var(--pikachu-light);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 204, 0, 0.2);
+  }
+  
+  .advanced-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 20px;
+      padding: 16px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--pikachu-gray);
+  }
+  
+  /* Pagination */
+  .pagination {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 28px;
+  }
+  
+  .page-btn {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      border: 1px solid var(--pikachu-gray);
+      background-color: white;
+      transition: var(--transition-standard);
+      cursor: pointer;
+      font-weight: 500;
+  }
+  
+  .page-btn:hover {
+      background-color: var(--pikachu-light);
+      border-color: var(--pikachu-primary);
+  }
+  
+  .page-btn.active {
+      background-color: var(--pikachu-primary);
+      color: var(--pikachu-dark);
+      border-color: var(--pikachu-secondary);
+      font-weight: 700;
+  }
+  
+  /* Main Container Styling */
+  .transactions-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+  }
+  
+  .transactions-container h1 {
+      text-align: center;
+      margin-bottom: 32px;
+      color: var(--pikachu-dark);
+      font-weight: 700;
+      font-size: 2.2rem;
+      font-family: 'Fredoka One', cursive;
+      letter-spacing: 1px;
+      position: relative;
+      display: inline-block;
+      left: 50%;
+      transform: translateX(-50%);
+  }
+
+  .add-to-cart-btn, .add-to-cart {
+    width: 150px;
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+      .transaction-header {
+          display: none;
+      }
+  
+      .advanced-filters {
+          flex-direction: column;
+          align-items: flex-start;
+      }
+  
+      .search-box, .filter-group, #applyFilters {
+          width: 100%;
+      }
+  
+      .transaction-item {
+          flex-direction: column;
+      }
+      
+      .transaction-item > div:last-child {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 16px;
+          padding-top: 16px;
+          border-top: 1px solid var(--pikachu-gray);
+      }
+  
+      .summary-item {
+          width: 100%;
+      }
+  }
+  
+  /* Tablet Responsiveness */
+  @media (max-width: 992px) and (min-width: 769px) {
+      .transaction-summary {
+          flex-wrap: wrap;
+      }
+  
+      .summary-item {
+          width: calc(50% - 15px);
+      }
+  }
