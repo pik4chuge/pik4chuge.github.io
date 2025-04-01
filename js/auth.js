@@ -1,6 +1,8 @@
 function initRegistration() {
     const registrationForm = document.getElementById('registrationForm');
     const playerIdDisplay = document.getElementById('playerIdDisplay');
+    const emailInput = document.getElementById('email');
+    const birthdateInput = document.getElementById('birthdate');
     
     function generatePlayerId() {
         let id = '';
@@ -14,11 +16,72 @@ function initRegistration() {
     const playerId = generatePlayerId();
     playerIdDisplay.textContent = `Player ID: ${playerId}`;
     
+    // Email validation function
+    function isValidEmail(email) {
+        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return emailRegex.test(email);
+    }
+    
+    // Date validation function
+    function isValidDate(dateString) {
+        // Check if it's a valid date format
+        const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+        if (!dateRegex.test(dateString)) return false;
+        
+        // Check if it's a real date
+        const date = new Date(dateString);
+        if (isNaN(date.getTime())) return false;
+        
+        // Check if date is not in the future
+        const today = new Date();
+        if (date > today) return false;
+        
+        // Check if birth year is reasonable (e.g., not before 1900)
+        const minYear = 1900;
+        if (date.getFullYear() < minYear) return false;
+        
+        return true;
+    }
+    
+    // Add validation to email input
+    emailInput.addEventListener('blur', function() {
+        if (this.value && !isValidEmail(this.value)) {
+            this.setCustomValidity('Please enter a valid email address');
+            this.reportValidity();
+        } else {
+            this.setCustomValidity('');
+        }
+    });
+    
+    // Add validation to birthdate input
+    birthdateInput.addEventListener('blur', function() {
+        if (this.value && !isValidDate(this.value)) {
+            this.setCustomValidity('Please enter a valid birth date (YYYY-MM-DD) that is not in the future');
+            this.reportValidity();
+        } else {
+            this.setCustomValidity('');
+        }
+    });
+    
     registrationForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
+        const email = emailInput.value;
+        const birthdate = birthdateInput.value;
         const password = document.getElementById('password').value;
         const confirmPassword = document.getElementById('confirmPassword').value;
+        
+        // Validate email
+        if (!isValidEmail(email)) {
+            alert("Please enter a valid email address!");
+            return;
+        }
+        
+        // Validate birthdate
+        if (!isValidDate(birthdate)) {
+            alert("Please enter a valid birth date!");
+            return;
+        }
         
         if (password !== confirmPassword) {
             alert("Passwords do not match!");
@@ -26,11 +89,11 @@ function initRegistration() {
         }
         
         const user = {
-            email: document.getElementById('email').value,
+            email: email,
             password: password,
             ign: document.getElementById('ign').value,
             playerId: playerId,
-            birthdate: document.getElementById('birthdate').value,
+            birthdate: birthdate,
             gender: document.querySelector('input[name="gender"]:checked')?.value || 'not specified',
             joinDate: new Date().toLocaleDateString(),
             lastLogin: new Date().toISOString(),
