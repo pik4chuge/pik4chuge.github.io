@@ -22,7 +22,7 @@ function loadUserData() {
     document.getElementById('username').textContent = user.ign.toUpperCase();
     document.getElementById('profilePlayerId').textContent = `ID: ${user.playerId}`;
     document.getElementById('profileEmail').textContent = user.email;
-    document.getElementById('profileBirthdate').textContent = new Date(user.birthday).toLocaleDateString('en-US', { 
+    document.getElementById('profileBirthdate').textContent = new Date(user.birthdate).toLocaleDateString('en-US', { 
         year: 'numeric', month: 'long', day: 'numeric' 
     }) || 'Not specified';
     document.getElementById('profileGender').textContent = user.gender.charAt(0).toUpperCase() + user.gender.slice(1);
